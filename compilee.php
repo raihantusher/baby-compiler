@@ -1,5 +1,7 @@
 <?php
 
+
+ini_set('max_execution_time', 1000);
 /*
 *
 * seperating all the inputs 
@@ -18,24 +20,43 @@ $code= $_POST["code"];
 $input=$_POST["input"];
 
 
-$folder=__DIR__.'/bin/'.uniqid();
+//$folder=__DIR__.'/bin/'.uniqid();
 
-mkdir($folder);
+//mkdir($folder);
 
-$code_file=$folder."/solution.py";
-$input_file=$folder."/input.txt";
-$output_file=$folder."/output.txt";
-$error_file=$folder."/error.txt";
+$code_file="solution.py";
+$input_file="input.txt";
+$output_file="output.txt";
+$error_file="error.txt";
 
 write_code($code_file,$code=$code);
 write_code($input_file,$input);
 
-copy("py.bat",$folder.'/py.bat');
-
-$command=$folder.'/py.bat';
-
-echo shell_exec("./run.bat");
-echo exec('whoami');
+//copy("py.bat",/py.bat');
 
 
-//exec('rd /s /q $folder');
+
+$command="py.bat $code_file $input_file $output_file $error_file";
+
+echo exec($command);
+
+
+//read output & error files
+$output=file_get_contents($output_file);
+$error=file_get_contents($error_file);
+
+
+$outlet=[];
+$outlet["error"]=0;
+
+
+if(trim($error)==""){
+
+	$outlet["code"] ="<pre>$output</pre>";
+}
+else{
+	$outlet["error"]=1;
+	$outlet["code"]="<pre>$error</pre>";
+}
+
+echo json_encode($outlet);

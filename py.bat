@@ -2,9 +2,13 @@
 set path="C:\Users\Raihan Tusher\AppData\Local\Programs\Python\Python37-32\";%path%
 set path="C:\Users\Raihan Tusher\AppData\Local\Programs\Python\Python37-32\Scripts\";%path%
 
-
-set arg1=%1
-set arg2=%2
+TIMEOUT /T 10
+set solution=%1
+set input=%2
+set output=%3
+set error=%4
 shift
 shift
-python  solution.py < input.txt > output.txt 2> error.txt
+shift
+shift
+python  %solution% < %input% > %output% 2> %error%

@@ -64,7 +64,7 @@
 					<div class="shadow p-3 mb-5 bg-white rounded">
 					
 							<div class="card-body">
-								<b>task</b>
+								<b id="error-reporting">task</b>
 							</div>
 					</div>
 				</div> <!-- error finished -->
@@ -81,7 +81,7 @@
 					<div class="shadow p-3 mb-5 bg-white rounded">
 					
 							<div class="card-body">
-								<b>task</b>
+								<b id="success-reporting">task</b>
 							</div>
 					</div>
 				</div> <!-- success print finished-->
@@ -108,6 +108,12 @@
         </script>
     <script>
          $(document).ready(function(){
+
+         	   function hideAllReporting(){
+         	   		$("#error").hide();
+         	   		$("#success").hide();
+         	   		//$("#notification").hide();
+         	   }
        			//$( "#text-input" ).prop( "checked", true );
       	
 	      		/*
@@ -133,47 +139,54 @@
 	      			$("#notification").text("Processing ...");
 	      			
 	      			// post code and input for compilation
-	      			$.post("http://localhost/compiler/compilee.php",
+	      			$.post("http://localhost/compiler/baby-compiler/compilee.php",
 			      			{
-			      				code:code,
-			      				input:input
+				      				code:code,
+				      				input:input
 			      			})
 			      			.done(function(data){
-			      				console.log(data);
+				      				//converting response-data to json
+				      				let result=JSON.parse(data);
+
+				      				if(result.error==1){
+				      					//error reporting
+				      					hideAllReporting();
+				      					$("#error").show();
+				      					$("#error-reporting").html(result.code);
+
+				      				}
+				      				else if(result.error==0){
+				      					// code reporting
+				      					hideAllReporting();
+				      					$("#success").show();
+				      					$("#success-reporting").html(result.code);
+
+				      				}
+				      				console.log(result.code);
+				      				$("#notification").text("Completed");
+
+				      				//hide notification message after 3 sec
+				      				setTimeout(function(){ 
+				      					$("#notification").hide();
+				      				 }, 2000);
 			      			});
-
-	      			
-
-	      			$.post( "https://reqres.in/api/users", 
-	      				{
-	      					 name: "John", 	
-	      					 time: "2pm" 
-	      				})
-						.done(function( data ) {
-    						console.log(  data.id );
-				      		$("#notification").text("Completed");
-
-  						})
-  						.fail(function() {
-    						alert( "error" );
-  						});
-
-	      		});
+	      				});
 
 
 
 	      		$("#submit").click(function(){
+	      			/*
 	      			 $.post( "https://reqres.in/api/users", 
 	      				{
-	      					 name: "John", 	
-	      					 time: "2pm" 
+	      					  
 	      				})
 						.done(function( data ) {
-    						console.log(  data.id );
+    						
   						})
   						.fail(function() {
-    						alert( "error" );
+    						
   						});
+  						*/
 	      		});
 	      		// run and submit button finished
 
