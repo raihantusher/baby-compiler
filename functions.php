@@ -1,6 +1,6 @@
 <?php
 
- require 'Medoo.php';
+require 'Medoo.php';
 use Medoo\Medoo;
 
 $database = new Medoo([
@@ -11,6 +11,7 @@ $database = new Medoo([
     'password' => ''
 ]);
 
+session_start();
 
 //$_SESSION["name"]="raihan";
 echo $_SESSION["name"];
