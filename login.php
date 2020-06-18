@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -40,8 +38,10 @@ if(isset($_POST["submit"])){
 
 	
 }
-
-echo $_SESSION["name"]. "<<";
+if(isset($_SESSION)){
+	//echo $_SESSION["name"]. "<<";
+}
+	
 ?>
 <div class="container">
 	<div class="row">
