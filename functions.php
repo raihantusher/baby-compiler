@@ -41,15 +41,18 @@ function hasRole($role_id){
 //redirect when user is logged in
 
 function ifLoggedIn(){
-	print_r($_SESSION);
-	if(isset($_SESSION)){
+	
+	if(isset($_SESSION["userinfo"])){
+		
+		
 		if($_SESSION["userinfo"]["role"]==1){
 			redirect("admin.php");
 		}
 
-		if($_SESSION["userinfo"]["role"]==1){
+		if($_SESSION["userinfo"]["role"]==0){
 			redirect("member.php");
 		}
+		
 	}
 }
 
