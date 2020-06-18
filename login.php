@@ -21,26 +21,21 @@
 require "functions.php";
 
 
-
 if(isset($_POST["submit"])){
-	$details=$database->get("users",["username","password]"],
+	$details=$database->get("users","*",
 	[
 		'username'=>$_POST['username']
 	]);
 		
 	if($details["password"]===md5($_POST['password'])){
-		echo "details are correct!";
-		
-		$_SESSION["name"]="raihan tusher";
-	}
 
-	//session_start();
+		$_SESSION["userinfo"]=$details;
 
-	
+	}	
 }
-if(isset($_SESSION)){
-	//echo $_SESSION["name"]. "<<";
-}
+
+
+ifLoggedIn();
 	
 ?>
 <div class="container">

@@ -13,8 +13,45 @@ $database = new Medoo([
 
 session_start();
 
-//$_SESSION["name"]="raihan";
-echo $_SESSION["name"];
+//redirect function
+function redirect($loc){
+	header("location: $loc");
+	exit();
+}
+
+
+function hasRole($role_id){
+	
+	if(isset($_SESSION)){
+		print_r($_SESSION);
+		if($_SESSION["userinfo"]["role"]==$role_id){
+			return true;
+		}
+		else {
+			redirect("login.php");
+		}
+	}
+	else{
+		// if session is not set then
+		// redirect to login
+		redirect("login.php");
+	}
+}
+
+//redirect when user is logged in
+
+function ifLoggedIn(){
+	print_r($_SESSION);
+	if(isset($_SESSION)){
+		if($_SESSION["userinfo"]["role"]==1){
+			redirect("admin.php");
+		}
+
+		if($_SESSION["userinfo"]["role"]==1){
+			redirect("member.php");
+		}
+	}
+}
 
 /*
 * testing case

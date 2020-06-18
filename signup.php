@@ -27,6 +27,7 @@ if(isset($_POST["submit"])){
 		"password"=>md5($_POST["password"]),
 	]);
 }
+ifLoggedIn();
 ?>
 <div class="container">
 	<div class="row">

@@ -1,5 +1,12 @@
 <?php 
 require "functions.php";
 
+//
 
-print_r($_SESSION);
+
+if(isset($_SESSION)){
+    print_r($_SESSION);
+    if($_SESSION["role"]=="1"){
+        
+    }
+}
