@@ -1,4 +1,9 @@
 <?php
+
 require "functions.php";
 
-echo "student home";
+echo hasRole(2);
+
+?>
+
+<a href="logout.php">Logout</a>

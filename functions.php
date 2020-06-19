@@ -16,14 +16,13 @@ session_start();
 //redirect function
 function redirect($loc){
 	header("location: $loc");
-	exit();
+	die();
 }
 
 
 function hasRole($role_id){
 	
 	if(isset($_SESSION)){
-		print_r($_SESSION);
 		if($_SESSION["userinfo"]["role"]==$role_id){
 			return true;
 		}
@@ -49,7 +48,7 @@ function ifLoggedIn(){
 			redirect("admin.php");
 		}
 
-		if($_SESSION["userinfo"]["role"]==0){
+		if($_SESSION["userinfo"]["role"]==2){
 			redirect("member.php");
 		}
 		
@@ -110,12 +109,3 @@ $database->insert("users",[
 ]);
 */
 
-function set_creation($arr){
-    
-}
-
-function set_deletion(){
-
-}
-
-function set_edit(){}
