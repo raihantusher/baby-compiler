@@ -23,6 +23,7 @@ echo hasRole(2);
   <body>
     <h1>Student Area</h1>
 
+    <p>Joinded Set</p>
 
     <div class="container">
         <div class="row justify-content-center">
