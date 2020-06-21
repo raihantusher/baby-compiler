@@ -36,7 +36,7 @@ hasRole(1);
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">set Name</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Options</th>
                         </tr>
                     </thead>
                     
@@ -44,7 +44,11 @@ hasRole(1);
                         <tr>
                           <th scope="row">1</th>
                           <td><a href="admin-questions.php">Mark</a></td>
-                          <td>Otto</td>
+                          <td>
+                              <a href="#" class="btn btn-primary btn-sm">View</a>
+                              <a href="#" class="btn btn-danger btn-sm">Relaunch</a>
+                              <a href="#" class="btn btn-warning btn-sm">Score</a>
+                          </td>
                         </tr>
                     </tbody>
                   
