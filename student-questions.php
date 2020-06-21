@@ -15,6 +15,8 @@
     <title>Hello, world!</title>
   </head>
   <body>
+
+  <?php require "header.php"; ?>
     <h1>Student area</h1>
 
     <p>Set Questions</p>
