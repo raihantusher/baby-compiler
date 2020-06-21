@@ -19,12 +19,10 @@
 
 // import functions which contains $database
 require "functions.php";
-
-
-	
 ?>
 
 <?php require "header.php"; ?>
+
 <h1>Join New Sets </h1>
 <div class="container">
 	<div class="row">
@@ -36,15 +34,8 @@ require "functions.php";
 				    <input type="text" class="form-control" name="pin>
 				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 				  </div>
-
-	
-
-			
-			
-			
-
-				
-				  <button type="submit" name="submit" value="submit" class="btn btn-primary">Join</button>
+        
+          <button type="submit" name="submit" value="submit" class="btn btn-primary">Join</button>
 				</form>
 		</div>
 	</div>

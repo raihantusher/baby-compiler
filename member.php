@@ -6,7 +6,6 @@ echo hasRole(2);
 
 ?>
 
-<a href="logout.php">Logout</a>
 
 <!doctype html>
 <html lang="en">

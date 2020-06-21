@@ -38,6 +38,8 @@ if(isset($_POST["submit"])){
 ifLoggedIn();
 	
 ?>
+
+
 <div class="container">
 	<div class="row">
 		<div class="col-7">
