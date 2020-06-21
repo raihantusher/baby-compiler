@@ -25,7 +25,7 @@ ifLoggedIn();
 	
 ?>
 
-
+<?php require "header.php"; ?>
 <h3>Forgot Password</h3>
 
 <div class="container">

@@ -23,6 +23,7 @@ hasRole(1);
   </head>
   <body>
 
+    <?php require "header.php"; ?>
 
   <div class="container">
         <div class="row justify-content-center">

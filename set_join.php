@@ -23,6 +23,8 @@ require "functions.php";
 
 	
 ?>
+
+<?php require "header.php"; ?>
 <h1>Join New Sets </h1>
 <div class="container">
 	<div class="row">

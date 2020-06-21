@@ -21,6 +21,9 @@ echo hasRole(2);
     <title>Hello, world!</title>
   </head>
   <body>
+
+  <?php require "header.php"; ?>
+  
     <h1>Student Area</h1>
 
     <p>Joinded Set</p>
