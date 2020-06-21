@@ -27,13 +27,13 @@ function hasRole($role_id){
 			return true;
 		}
 		else {
-			redirect("login.php");
+			redirect("index.php");
 		}
 	}
 	else{
 		// if session is not set then
 		// redirect to login
-		redirect("login.php");
+		redirect("index.php");
 	}
 }
 
