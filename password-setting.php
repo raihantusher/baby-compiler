@@ -17,11 +17,9 @@
 
   <?php
 
-// import functions which contains $database
-require "functions.php";
-
-
-
+		// import functions which contains $database
+		require "functions.php";
+		
 	
 ?>
 
