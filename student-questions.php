@@ -19,21 +19,65 @@
 
     <p>Set Questions</p>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-7">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+<div class="container-fluid">
+    <!-- score -->
+    <div class="row justify-content-center">
+                <div class="col-3 ">
+                      <div class="card bg-primary">
+                        <div class="card-header"> Total</div>
+                            <div class="card-body">
+                                  <p class="card-text"></p>
+                                 
+                              </div>
+                        </div>
                 </div>
-            </div>
 
-          
+                <div class="col-3 ">
+                      <div class="card bg-success" >
+                        <div class="card-header">Score</div>
+                              <div class="card-body">
+                                <p class="card-text"</p>
+                                 
+                              </div>
+                        </div>
+                </div>
 
-
+                <div class="col-3 ">
+                      <div class="card bg-info" >
+                        <div class="card-header"> Pending</div>
+                              <div class="card-body">
+                                  <p class="card-text"></p>
+                                  
+                              </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+    
+    
+    
+      <div class="container mt-5">
+          <div class="row justify-content-center">
+              <div class="col-7">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                        </tr>
+                    </tbody>
+                  
+                  </table>
+              </div>
         </div>
     </div>
 
