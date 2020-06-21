@@ -34,8 +34,8 @@ require "functions.php";
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">set Name</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Set Name</th>
+                        <th scope="col">Score</th>
                         </tr>
                     </thead>
                     
@@ -43,7 +43,7 @@ require "functions.php";
                         <tr>
                           <th scope="row">1</th>
                           <td><a href="student-questions.php">Mark</a></td>
-                          <td>Otto</td>
+                          <td>0.00</td>
                         </tr>
                     </tbody>
                   

@@ -14,7 +14,9 @@
   </head>
   <body>
 
-  <?php require "header.php"; ?>
+  <?php 
+    require "functions.php";
+    require "header.php"; ?>
     <h1>Student area</h1>
 
     <p>Set Questions</p>
