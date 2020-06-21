@@ -14,7 +14,9 @@
   </head>
   <body>
   
-    <?php require "header.php"; ?>
+    <?php
+    require "functions.php";
+    require "header.php"; ?>
     
     <h1>Admin area</h1>
 
@@ -28,7 +30,7 @@
                         <tr>
                            <th scope="col">#</th>
                             <th scope="col">Title</th>
-                          <th scope="col">Status</th>
+                          <th scope="col">options</th>
                         </tr>
                       </thead>
                     
@@ -36,7 +38,10 @@
                           <tr>
                             <th scope="row">1</th>
                             <td><a href="test.php">Question name</a></td>
-                            <td>Otto</td>
+                            <td>
+                              <a href="#" class="btn btn-primary btn-sm">Edit </a>
+                              <a href="#" class="btn btn-danger btn-sm">Delete </a>
+                            </td>
                           </tr>
                       </tbody>
                   
