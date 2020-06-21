@@ -14,7 +14,9 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  <?php require "header.php"; ?>
+  <?php 
+	 require "functions.php";  
+	  require "header.php"; ?>
 
   
 <div class="container">
