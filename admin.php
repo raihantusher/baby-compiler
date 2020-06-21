@@ -6,8 +6,6 @@ hasRole(1);
 
 ?>
 
-<a href="logout.php">Logout</a>
-
 
 <!doctype html>
 <html lang="en">
@@ -25,17 +23,29 @@ hasRole(1);
 
     <?php require "header.php"; ?>
 
-  <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-7">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+    <div class="container mt-5">
+          <div class="row justify-content-center">
+              <div class="col-7">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">set Name</th>
+                        <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td><a href="student-questions.php">Mark</a></td>
+                          <td>Otto</td>
+                        </tr>
+                    </tbody>
+                  
+                  </table>
+              </div>
+        </div>
 
           
 
