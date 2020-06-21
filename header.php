@@ -35,7 +35,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="login.html" class="nav-link">
+            <a href="logout.php" class="nav-link">
               <i class="fas fa-user-times"></i> Logout
             </a>
           </li>
