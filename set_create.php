@@ -62,7 +62,7 @@
 					<!-- set uid -->
 				  <div class="form-group">
 				    <label >Unique ID:</label>
-				    <input type="text" class="form-control" name="uuid" value=<?=uniqid()?>">
+				    <input type="text" class="form-control" name="uuid" value="<?=uniqid()?>">
 				  </div>
 				  <!-- set uid finished here-->
 
