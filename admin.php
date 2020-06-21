@@ -26,7 +26,7 @@ hasRole(1);
     <div class="container mt-5">
 
           <div class="row justify-content-end">
-              <button class="btn btn-primary">Create Set</button>
+              <a href="set_create.php" class="btn btn-primary">Create Set</a>
           </div>
         
           <div class="row justify-content-center">
