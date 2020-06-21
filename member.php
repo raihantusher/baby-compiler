@@ -23,7 +23,7 @@ echo hasRole(2);
   <body>
 
   <?php require "header.php"; ?>
-  
+
     <h1>Student Area</h1>
 
     <p>Joinded Set</p>
@@ -51,7 +51,7 @@ echo hasRole(2);
                   </table>
               </div>
         </div>
-    </div>
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
