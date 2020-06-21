@@ -2,7 +2,7 @@
 
 require "functions.php";
 
-echo hasRole(2);
+ hasRole(2);
 
 ?>
 
