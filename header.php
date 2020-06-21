@@ -9,15 +9,6 @@
           <li class="nav-item px-2">
             <a href="index.html" class="nav-link active">Dashboard</a>
           </li>
-          <li class="nav-item px-2">
-            <a href="posts.html" class="nav-link">Posts</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="categories.html" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="users.html" class="nav-link">Users</a>
-          </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">
@@ -26,10 +17,7 @@
               <i class="fas fa-user"></i> Welcome Brad
             </a>
             <div class="dropdown-menu">
-              <a href="profile.html" class="dropdown-item">
-                <i class="fas fa-user-circle"></i> Profile
-              </a>
-              <a href="settings.html" class="dropdown-item">
+              <a href="password-setting.php" class="dropdown-item">
                 <i class="fas fa-cog"></i> Settings
               </a>
             </div>
