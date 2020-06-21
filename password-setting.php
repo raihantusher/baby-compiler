@@ -21,12 +21,12 @@
 require "functions.php";
 
 
-ifLoggedIn();
+
 	
 ?>
 
 <?php require "header.php"; ?>
-<h3>Forgot Password</h3>
+<h3>Password Change</h3>
 
 <div class="container">
 	<div class="row">
