@@ -17,13 +17,18 @@ hasRole(1);
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Admin Home</title>
   </head>
   <body>
 
     <?php require "header.php"; ?>
 
     <div class="container mt-5">
+
+          <div class="row justify-content-end">
+              <button class="btn btn-primary">Create Set</button>
+          </div>
+        
           <div class="row justify-content-center">
               <div class="col-7">
                 <table class="table table-bordered">
@@ -38,7 +43,7 @@ hasRole(1);
                     <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td><a href="student-questions.php">Mark</a></td>
+                          <td><a href="admin-questions.php">Mark</a></td>
                           <td>Otto</td>
                         </tr>
                     </tbody>
