@@ -71,7 +71,7 @@
                     <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Mark</td>
+                          <td><a href="test.php">Question name</a></td>
                           <td>Otto</td>
                         </tr>
                     </tbody>
