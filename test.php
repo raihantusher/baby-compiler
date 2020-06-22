@@ -1,4 +1,14 @@
 
+<?php 
+
+require "functions.php";  
+
+$q_id=$_GET["q_id"]; 
+ $q=$database->get("questions","*",[
+		"id"=>$q_id
+ ]) ;
+  ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,17 +21,11 @@
 
     <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/assets/css/styles.css">
 
-    <title>Hello, world!</title>
+    <title><?=$q["title"]?></title>
   </head>
   <body>
   <?php 
-
-	require "functions.php";  
 	require "header.php";
-	$q_id=$_GET["q_id"]; 
-	 $q=$database->get("questions","*",[
-			"id"=>$q_id
-	 ]) ;
 	  ?>
 
   
