@@ -4,6 +4,10 @@ require "functions.php";
 
 hasRole(1);
 
+$sets=$database->select("sets","*");
+
+//print_r($sets);
+
 ?>
 
 
@@ -42,16 +46,18 @@ hasRole(1);
                     </thead>
                     
                     <tbody>
+                      <?php foreach($sets as $set):?>
                         <tr>
-                          <th scope="row">1</th>
-                          <td><a href="admin-questions.php">Mark</a></td>
-                          <td>5</td>
+                          <th scope="row"><?=$set["id"]?></th>
+                          <td><a href="admin-questions.php"><?=$set["name"]?></a></td>
+                          <td><?=$set["n_q"]?></td>
                           <td>
-                              <a href="#" class="btn btn-primary btn-sm">View</a>
-                              <a href="#" class="btn btn-danger btn-sm">Relaunch</a>
-                              <a href="#" class="btn btn-warning btn-sm">Score</a>
+                              <a href="admin-questions.php?set_id=<?=$set["id"]?>" class="btn btn-primary btn-sm">View</a>
+                              <a href="set_relaunch.php?set_id=<?=$set["id"]?>" class="btn btn-danger btn-sm">Relaunch</a>
+                              <a href="set_scores.php?set_id=<?=$set["id"]?>" class="btn btn-warning btn-sm">Score</a>
                           </td>
                         </tr>
+                      <?php endforeach; ?>
                     </tbody>
                   
                   </table>
