@@ -1,5 +1,13 @@
 
+<?php
+ require "functions.php";
+ $set_id=$_GET["set_id"];
 
+ $qs=$database->select("questions","*",[
+  "set_id"=>$set_id
+]);
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,8 +23,10 @@
   <body>
 
   <?php 
-    require "functions.php";
-    require "header.php"; ?>
+  
+    require "header.php";
+  
+  ?>
     <h1>Student area</h1>
 
     <p>Set Questions</p>
@@ -71,11 +81,13 @@
                     </thead>
                     
                     <tbody>
+                      <?php foreach($qs as $q): ?>
                         <tr>
-                          <th scope="row">1</th>
-                          <td><a href="test.php">Question name</a></td>
+                          <th scope="row"><?=$q["id"]?></th>
+                          <td><a href="test.php?q_id=<?=$q["id"]?>"><?=$q["title"]?></a></td>
                           <td>Otto</td>
                         </tr>
+                      <?php endforeach; ?>
                     </tbody>
                   
                   </table>
