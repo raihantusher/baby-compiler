@@ -3,7 +3,16 @@
 require "functions.php";
 
  hasRole(2);
+ $user_id=$_SESSION["userinfo"]["id"];
+ $sql="SELECT sets.id, sets.name,sets.n_q,set_user.score
+ FROM sets
+ RIGHT JOIN set_user
+ ON set_user.set_id = sets.id
+ WHERE 
+   set_user.user_id=$user_id;";
 
+ $qs=$database->query($sql)->fetchAll();
+  
 ?>
 
 
@@ -40,11 +49,13 @@ require "functions.php";
                     </thead>
                     
                     <tbody>
+                      <?php foreach($qs as $q): ?>
                         <tr>
-                          <th scope="row">1</th>
-                          <td><a href="student-questions.php">Mark</a></td>
-                          <td>0.00</td>
+                          <th scope="row"><?=$q["id"]?></th>
+                          <td><a href="student-questions.php"><?=$q["name"]?></a></td>
+                          <td><?=$q["score"]?>/<?=$q["n_q"]?></td>
                         </tr>
+                      <?php endforeach; ?>
                     </tbody>
                   
                   </table>
