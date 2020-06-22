@@ -2,7 +2,12 @@
   <?php
       require "functions.php";
       require "header.php"; 
-      $qs=$database->select("questions","*");
+
+      $set_id=$_GET["set_id"];
+      
+      $qs=$database->select("questions","*",[
+          "set_id"=>$set_id
+      ]);
       
   ?>
 <!doctype html>
