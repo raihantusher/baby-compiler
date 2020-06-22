@@ -15,8 +15,14 @@
   </head>
   <body>
   <?php 
-	 require "functions.php";  
-	  require "header.php"; ?>
+
+	require "functions.php";  
+	require "header.php";
+	$q_id=$_GET["q_id"]; 
+	 $q=$database->get("questions","*",[
+			"id"=>$q_id
+	 ]) ;
+	  ?>
 
   
 <div class="container">
@@ -24,8 +30,9 @@
 		<div class="col-8">
 			<div class="shadow p-3 mb-5 bg-white rounded">
 				<div class="card">
+					<div class="card-header"><?= $q["title"]?></div>
 					<div class="card-body">
-						<b>task</b>
+					<?=$q["description"]?>
 					</div>
 				</div>
 			</div>
@@ -33,7 +40,7 @@
 			<div class="shadow p-3 mb-5 bg-white rounded">
 				<div class="card">
 					<div class="card-body">
-						<b>task</b>
+						<b>Code Editor:</b>
 						<div id="editor" class="ace_editor"></div>
 					</div>
 					
@@ -108,6 +115,7 @@
         var editor = ace.edit("editor");
         editor.session.setMode("ace/mode/python");
         editor.resize(true);
+		editor.setValue("<?=$q["question_template"]?>");
 
         </script>
     <script>
