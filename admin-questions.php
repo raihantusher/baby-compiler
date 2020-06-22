@@ -1,5 +1,10 @@
 
-
+  <?php
+      require "functions.php";
+      require "header.php"; 
+      $qs=$database->select("questions","*");
+      
+  ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,13 +15,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title> Question List</title>
   </head>
   <body>
   
-    <?php
-    require "functions.php";
-    require "header.php"; ?>
+  
     
     <h1>Admin area</h1>
 
@@ -35,14 +38,16 @@
                       </thead>
                     
                       <tbody>
+                        <?php foreach($qs as $q):?>
                           <tr>
-                            <th scope="row">1</th>
-                            <td><a href="test.php">Question name</a></td>
+                            <th scope="row"><?=$q["id"]?></th>
+                            <td><a href="test.php?q_id=<?=$q["id"]?>"><?=$q["title"]?></a></td>
                             <td>
                               <a href="#" class="btn btn-primary btn-sm">Edit </a>
                               <a href="#" class="btn btn-danger btn-sm">Delete </a>
                             </td>
                           </tr>
+                        <?php endforeach; ?>
                       </tbody>
                   
                   </table>
