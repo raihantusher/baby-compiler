@@ -52,7 +52,7 @@ require "functions.php";
                       <?php foreach($qs as $q): ?>
                         <tr>
                           <th scope="row"><?=$q["id"]?></th>
-                          <td><a href="student-questions.php"><?=$q["name"]?></a></td>
+                          <td><a href="student-questions.php?set_id=<?=$q["id"]?>"><?=$q["name"]?></a></td>
                           <td><?=$q["score"]?>/<?=$q["n_q"]?></td>
                         </tr>
                       <?php endforeach; ?>
