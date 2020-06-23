@@ -44,7 +44,7 @@ require "functions.php";
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Set Name</th>
-                        <th scope="col">Score</th>
+                        <th scope="col">Number of Questions</th>
                         </tr>
                     </thead>
                     
@@ -53,7 +53,7 @@ require "functions.php";
                         <tr>
                           <th scope="row"><?=$q["id"]?></th>
                           <td><a href="student-questions.php?set_id=<?=$q["id"]?>"><?=$q["name"]?></a></td>
-                          <td><?=$q["score"]?>/<?=$q["n_q"]?></td>
+                          <td><?=$q["n_q"]?></td>
                         </tr>
                       <?php endforeach; ?>
                     </tbody>
