@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
 		"title"=>$_POST["title"],
 		"description"=>$_POST["description"],
 		"question_template"=>$_POST["question_template"],
-		"set_id"=>1
+		"set_id"=>$_GET["set_id"]
 	]);
 }
 ?>
