@@ -191,18 +191,20 @@ $q_id=$_GET["q_id"];
 
 
 	      		$("#submit").click(function(){
-	      			/*
-	      			 $.post( "https://reqres.in/api/users", 
+	      			
+	      			 $.post( "./code_submission.php", 
 	      				{
-	      					  
+							  set_id:<?=$q["set_id"]?>,
+							  q_id:<?=$q["id"]?>,
+	      					  code:editor.getValue()
 	      				})
 						.done(function( data ) {
-    						
+    						console.log(data);
   						})
   						.fail(function() {
     						
   						});
-  						*/
+  					
 	      		});
 	      		// run and submit button finished
 
