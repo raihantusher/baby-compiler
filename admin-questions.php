@@ -31,6 +31,9 @@
     <p>Set Questions</p>
 
     <div class="container">
+           <div class="row justify-content-end">
+              <a href="q_c_form.php?set_id=<?=$set_id?>" class="btn btn-primary">Add Question</a>
+          </div>
         <div class="row justify-content-center">
             <div class="col-7">
                   <table class="table table-bordered">
