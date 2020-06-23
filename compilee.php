@@ -1,7 +1,6 @@
 <?php
 
 
-ini_set('max_execution_time', 1000);
 /*
 *
 * seperating all the inputs 
@@ -51,7 +50,7 @@ $outlet["error"]=0;
 
 
 if(trim($error)==""){
-
+	$output=trim($output);
 	$outlet["code"] ="<pre>$output</pre>";
 }
 else{
