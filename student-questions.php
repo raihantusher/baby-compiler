@@ -3,9 +3,30 @@
  require "functions.php";
  $set_id=$_GET["set_id"];
 
- $qs=$database->select("questions","*",[
-  "set_id"=>$set_id
-]);
+ $qs=$database->query("
+        SELECT questions.id, questions.title,answers.result
+
+        FROM `questions`
+        
+        INNER JOIN `answers`
+        
+          ON `questions`.`id`=`answers`.`question_id`
+        
+        WHERE `questions`.`set_id`=5
+  ")->fetchAll();
+
+  $answer_pending=$database->count("answers",[
+      "set_id"=>$set_id,
+      "result"=>"pending"
+  ]);
+
+  $answer_right=$database->count("answers",[
+    "set_id"=>$set_id,
+    "result"=>"right"
+  ]);
+
+
+
 
 ?>
 <!doctype html>
@@ -38,7 +59,7 @@
                       <div class="card bg-primary">
                         <div class="card-header"> Total</div>
                             <div class="card-body">
-                                  <p class="card-text"></p>
+                                  <p class="card-text"><?=count($qs)?></p>
                                  
                               </div>
                         </div>
@@ -48,7 +69,7 @@
                       <div class="card bg-success" >
                         <div class="card-header">Score</div>
                               <div class="card-body">
-                                <p class="card-text"</p>
+                                <p class="card-text"><?=$answer_right ; ?></p>
                                  
                               </div>
                         </div>
@@ -58,7 +79,7 @@
                       <div class="card bg-info" >
                         <div class="card-header"> Pending</div>
                               <div class="card-body">
-                                  <p class="card-text"></p>
+                                  <p class="card-text"><?=$answer_pending?></p>
                                   
                               </div>
                         </div>
@@ -85,7 +106,7 @@
                         <tr>
                           <th scope="row"><?=$q["id"]?></th>
                           <td><a href="test.php?q_id=<?=$q["id"]?>"><?=$q["title"]?></a></td>
-                          <td>Otto</td>
+                          <td><?=$q["result"]?></td>
                         </tr>
                       <?php endforeach; ?>
                     </tbody>
