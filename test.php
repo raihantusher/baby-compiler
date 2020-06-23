@@ -96,7 +96,9 @@ $q_id=$_GET["q_id"];
 					<div class="shadow p-3 mb-5 bg-white rounded">
 					
 							<div class="card-body">
+							
 								<b id="success-reporting">task</b>
+								
 							</div>
 					</div>
 				</div> <!-- success print finished-->
@@ -175,7 +177,7 @@ $q_id=$_GET["q_id"];
 				      					// code reporting
 				      					hideAllReporting();
 				      					$("#success").show();
-				      					$("#success-reporting").html(result.code);
+				      					$("#success-reporting").html(result.code.trim());
 
 				      				}
 				      				console.log(result.code);
