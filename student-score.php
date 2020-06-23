@@ -2,13 +2,37 @@
 <?php
  require "functions.php";
  $set_id=$_GET["set_id"];
+  $user_id=$_SESSION["userinfo"]["id"];
 
   $all_qs=$database->select("questions","*",[
     "set_id"=>$set_id,
   ]);
+  
+ $qs=$database->query("
+        SELECT questions.id, questions.title,answers.result
+
+        FROM `questions`
+        
+        RIGHT JOIN `answers`
+        
+          ON `questions`.`id`=`answers`.`question_id` 
+        
+        WHERE `answers`.`user_id`=$user_id
+  ")->fetchAll();
+
+  $answer_pending=$database->count("answers",[
+      "set_id"=>$set_id,
+      "user_id"=>$user_id,
+      "result"=>"pending"
+  ]);
+
+  $answer_right=$database->count("answers",[
+    "set_id"=>$set_id,
+    "user_id"=>$user_id,
+    "result"=>"right"
+  ]);
 
 
- 
 
 
 ?>
@@ -35,7 +59,41 @@
 
     <p>Set Questions</p>
 
+<div class="container-fluid">
+    <!-- score -->
+    <div class="row justify-content-center">
+                <div class="col-3 ">
+                      <div class="card bg-primary">
+                        <div class="card-header"> Total</div>
+                            <div class="card-body">
+                                  <p class="card-text"><?=count($qs)?></p>
+                                 
+                              </div>
+                        </div>
+                </div>
 
+                <div class="col-3 ">
+                      <div class="card bg-success" >
+                        <div class="card-header">Score</div>
+                              <div class="card-body">
+                                <p class="card-text"><?=$answer_right ; ?></p>
+                                 
+                              </div>
+                        </div>
+                </div>
+
+                <div class="col-3 ">
+                      <div class="card bg-info" >
+                        <div class="card-header"> Pending</div>
+                              <div class="card-body">
+                                  <p class="card-text"><?=$answer_pending?></p>
+                                  
+                              </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+    
     
     
       <div class="container mt-5">
@@ -46,20 +104,25 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Status</th>
                         </tr>
                     </thead>
                     
                     <tbody>
-                      <?php foreach($all_qs as $q): ?>
+                      <?php foreach($qs as $q): ?>
                         <tr>
                           <th scope="row"><?=$q["id"]?></th>
                           <td><a href="test.php?q_id=<?=$q["id"]?>"><?=$q["title"]?></a></td>
+                          <td><?=$q["result"]?></td>
                         </tr>
                       <?php endforeach; ?>
                     </tbody>
                   
                   </table>
               </div>
+
+
+          
         </div>
     </div>
 
