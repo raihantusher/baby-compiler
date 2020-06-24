@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0  sticky-top">
     <div class="container">
-      <a href="index.html" class="navbar-brand">Blogen</a>
+      <a href="index.php" class="navbar-brand">MIU-CODERRANK</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav">
           <li class="nav-item px-2">
-            <a href="index.html" class="nav-link active">Dashboard</a>
+            <a href="index.php" class="nav-link active">Dashboard</a>
           </li>
         </ul>
 
