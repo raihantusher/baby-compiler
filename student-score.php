@@ -4,7 +4,7 @@
  $set_id=$_GET["set_id"];
   $user_id=$_SESSION["userinfo"]["id"];
 
-  $all_qs=$database->select("questions","*",[
+  $all_qs=$database->count("questions",[
     "set_id"=>$set_id,
   ]);
   
@@ -17,13 +17,19 @@
         
           ON `questions`.`id`=`answers`.`question_id` 
         
-        WHERE `answers`.`user_id`=$user_id
+        WHERE `answers`.`user_id`=$user_id and `answers`.`set_id`=$set_id;
   ")->fetchAll();
 
   $answer_pending=$database->count("answers",[
       "set_id"=>$set_id,
       "user_id"=>$user_id,
       "result"=>"pending"
+  ]);
+
+  $answer_wrong=$database->count("answers",[
+    "set_id"=>$set_id,
+    "user_id"=>$user_id,
+    "result"=>"wrong"
   ]);
 
   $answer_right=$database->count("answers",[
@@ -66,7 +72,7 @@
                       <div class="card bg-primary">
                         <div class="card-header"> Total</div>
                             <div class="card-body">
-                                  <p class="card-text"><?=count($qs)?></p>
+                                  <p class="card-text"><?=$all_qs?></p>
                                  
                               </div>
                         </div>
@@ -84,9 +90,19 @@
 
                 <div class="col-3 ">
                       <div class="card bg-info" >
-                        <div class="card-header"> Pending</div>
+                        <div class="card-header">Pending</div>
                               <div class="card-body">
                                   <p class="card-text"><?=$answer_pending?></p>
+                                  
+                              </div>
+                        </div>
+                </div>
+
+                <div class="col-3 ">
+                      <div class="card bg-danger" >
+                        <div class="card-header"> wrong</div>
+                              <div class="card-body">
+                                  <p class="card-text"><?=$answer_wrong?></p>
                                   
                               </div>
                         </div>

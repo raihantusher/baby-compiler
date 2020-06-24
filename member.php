@@ -38,7 +38,7 @@ require "functions.php";
 
     <div class="container mt-5">
           <div class="row justify-content-end">
-              <a href="q_c_form.php?set_id=<?=$set_id?>" class="btn btn-primary">Join Set</a>
+              <a href="join-set.php" class="btn btn-primary">Join Set</a>
           </div>
           <div class="row justify-content-center">
               <div class="col-7">
