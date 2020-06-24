@@ -23,7 +23,7 @@
 	$database->insert("sets",[
 		"name"=>$_POST["set_name"],
 		"n_q"=>$_POST["n_q"],
-		"min"=>$_POST["min"],
+		//"min"=>$_POST["min"],
 		"uuid"=>$_POST['uuid'],
 		"status"=>"active"
 	]);
@@ -53,16 +53,16 @@
 				  	<!-- set number of question -->
 				
 					<!-- set min -->
-				  <div class="form-group">
+				  <!--div class="form-group">
 				    <label >Set Timeout:</label>
 				    <input type="number" name="min" class="form-control" >
-				  </div>
+				  </div -->
 				  	<!-- set min -->
 
 					<!-- set uid -->
 				  <div class="form-group">
 				    <label >Unique ID:</label>
-				    <input type="text" class="form-control" name="uuid" value="<?=uniqid()?>">
+				    <input type="text" class="form-control" name="uuid" >
 				  </div>
 				  <!-- set uid finished here-->
 
