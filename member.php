@@ -48,6 +48,7 @@ require "functions.php";
                         <th scope="col">#</th>
                         <th scope="col">Set Name</th>
                         <th scope="col">Number of Questions</th>
+                        <th scope="col">Options</th>
                         </tr>
                     </thead>
                     
@@ -57,6 +58,10 @@ require "functions.php";
                           <th scope="row"><?=$q["id"]?></th>
                           <td><a href="student-questions.php?set_id=<?=$q["id"]?>"><?=$q["name"]?></a></td>
                           <td><?=$q["n_q"]?></td>
+                          <td>
+                            <a href="student-questions.php?set_id=<?=$q["id"]?>" class="btn btn-danger btn-sm">Questions</a>
+                            <a href="student-score.php?set_id=<?=$q["id"]?>" class="btn btn-warning btn-sm">Score</a>
+                          </td>
                         </tr>
                       <?php endforeach; ?>
                     </tbody>
