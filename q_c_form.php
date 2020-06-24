@@ -19,14 +19,26 @@
 
 // import functions which contains $database
 require "functions.php";
-if(isset($_POST["submit"])){
+
+	$set_id=$_GET["set_id"];
+	//entry questions number
+	$q_n=$database->count("questions",[
+		"set_id"=>$set_id
+	]);
+
+	//limit 
+	$limit=$database->get("sets","n_q",[
+		"id"=>$set_id
+	]);
+
+if(isset($_POST["submit"]) && $q_n!=$limit ){
 	echo $_POST["title"];
 	
 	$database->insert("questions",[
 		"title"=>$_POST["title"],
 		"description"=>$_POST["description"],
 		"question_template"=>$_POST["question_template"],
-		"set_id"=>$_GET["set_id"]
+		"set_id"=>$set_id
 	]);
 }
 ?>
