@@ -49,7 +49,7 @@ $sets=$database->select("sets","*");
                       <?php foreach($sets as $set):?>
                         <tr>
                           <th scope="row"><?=$set["id"]?></th>
-                          <td><a href="admin-questions.php"><?=$set["name"]?></a></td>
+                          <td><?=$set["name"]?></td>
                           <td><?=$set["n_q"]?></td>
                           <td>
                               <a href="admin-questions.php?set_id=<?=$set["id"]?>" class="btn btn-primary btn-sm">View</a>
