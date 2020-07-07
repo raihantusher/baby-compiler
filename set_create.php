@@ -33,42 +33,46 @@
 <?php require "header.php"; ?>
 
 <div class="container">
-	<div class="row">
+	<div class="row justify-content-center">
 		<div class="col-7">
-			<form method="POST" >
-				<!-- set name -->
-				  <div class="form-group">
-				    <label for="exampleInputEmail1">Set Name:</label>
-				    <input type="text" name="set_name" class="form-control"  aria-describedby="emailHelp">
-				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  			<div class="card">
+  				<div class="card-header text-center">Set Creation </div>
+				  <div class="card-body">
+				  		<form method="POST" >
+							<!-- set name -->
+							<div class="form-group">
+								<label for="exampleInputEmail1">Set Name:</label>
+								<input type="text" name="set_name" class="form-control"  aria-describedby="emailHelp">
+								
+								<!-- set name -->
+
+								<!-- set number of question -->
+							<div class="form-group">
+
+								<label >Number of Questions:</label>
+								<input type="number" name="n_q" class="form-control" >
+							</div>
+								<!-- set number of question -->
+							
+								<!-- set min -->
+							<!--div class="form-group">
+								<label >Set Timeout:</label>
+								<input type="number" name="min" class="form-control" >
+							</div -->
+								<!-- set min -->
+
+								<!-- set uid -->
+							<div class="form-group">
+								<label >Unique ID:</label>
+								<input type="text" class="form-control" name="uuid" >
+							</div>
+							<!-- set uid finished here-->
+
+							
+							<button type="submit" value="submit" name="submit" class="btn btn-primary">Submit</button>
+						</form>
 				  </div>
-					<!-- set name -->
-
-				  	<!-- set number of question -->
-				  <div class="form-group">
-
-				    <label >Number of Questions:</label>
-				    <input type="number" name="n_q" class="form-control" >
-				  </div>
-				  	<!-- set number of question -->
-				
-					<!-- set min -->
-				  <!--div class="form-group">
-				    <label >Set Timeout:</label>
-				    <input type="number" name="min" class="form-control" >
-				  </div -->
-				  	<!-- set min -->
-
-					<!-- set uid -->
-				  <div class="form-group">
-				    <label >Unique ID:</label>
-				    <input type="text" class="form-control" name="uuid" >
-				  </div>
-				  <!-- set uid finished here-->
-
-				
-				  <button type="submit" value="submit" name="submit" class="btn btn-primary">Submit</button>
-				</form>
+			</div>
 		</div>
 	</div>
 </div>
