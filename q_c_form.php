@@ -48,31 +48,36 @@ if(isset($_POST["submit"]) && $q_n!=$limit ){
 <div class="container">
 	<div class="row">
 		<div class="col-7">
-			<form method="POST">
-				<!-- set title -->
-				  <div class="form-group">
-				    <label >Title:</label>
-				    <input type="text" class="form-control" name="title">
-				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				  </div>
-					<!-- set title -->
+			<div class="card">
+				<div class="card-header"></div>
+				<div class="card-body">
+						<form method="POST">
+						<!-- set title -->
+						<div class="form-group">
+							<label >Title:</label>
+							<input type="text" class="form-control" name="title">
+							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+							<!-- set title -->
 
-					<div class="form-group">
-    					<label >Description</label>
-    					<textarea class="form-control" name="description" rows="3"></textarea>
-  					</div>
+							<div class="form-group">
+								<label >Description</label>
+								<textarea class="form-control" name="description" rows="3"></textarea>
+							</div>
 
-					<div class="form-group">
-    					<label for="exampleFormControlTextarea1">Code Template</label>
-    					<textarea class="form-control" name="question_template" rows="3"></textarea>
-  					</div>
+							<div class="form-group">
+								<label for="exampleFormControlTextarea1">Code Template</label>
+								<textarea class="form-control" name="question_template" rows="3"></textarea>
+							</div>
 
-			
-			
+					
+					
 
-				
-				  <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
-				</form>
+						
+						<button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+						</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
