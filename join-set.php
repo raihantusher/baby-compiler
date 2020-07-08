@@ -52,18 +52,18 @@ if(isset($_POST["submit"])){
 	<div class="row justify-content-center">
 		<div class="col-4">
 			<div class="card">
-				<div class="card-header">Login</div>
+				<div class="card-header">Join Set</div>
 				<div class="card-body">
 					<form method="POST">
 			
 						<div class="form-group">
 						<label >Join Pin:</label>
 						<input type="text" class="form-control" name="pin">
-						<small  class="form-text text-muted">Insert given pin to join</small>
+						
 						</div>
 					
 	
-						<button type="submit" name="submit" value="submit" class="btn btn-primary">Login</button>
+						<button type="submit" name="submit" value="submit" class="btn btn-primary">Join</button>
 					</form>
 				</div>
 			</div> <!-- card -->
